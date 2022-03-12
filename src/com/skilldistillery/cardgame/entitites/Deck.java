@@ -35,5 +35,17 @@ public class Deck {
 		Collections.shuffle(cards);
 	}
 	
+	public void showDeckShuffle() {
+		String showCard = ""; 
+		Collections.shuffle(cards);
+		int i = 0;
+		
+		for (Card card : this.cards) {
+			showCard += "\n" + i + card.toString();
+			i ++; 
+		}
+		System.out.println(showCard);
+	}
+	
 	
 }

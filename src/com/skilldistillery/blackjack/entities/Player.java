@@ -27,17 +27,14 @@ public class Player {
 
 	}
 
-//	public void showHand() {
-//		System.out.println(playerHand.addCard(null).get(0) + "\n" + playerHand.getCards().get(1));
-//	}
-
 	public void showHand() {
-		System.out.println("Your hand: " + playerHand.getCards() + " " + playerHand.getHandValue());
+		System.out.println("Player Hand: ");
+		System.out.println(playerHand.getCards() + "\nHand point value:" + playerHand.getHandValue() + "\n");
 	}
 
 	public void playerWin() {
-		System.out.println("Congrats you have won this round!");
-		System.out.println("Would you like to play again? ");
+		System.out.println("Player Wins!");
+		
 	}
 
 }

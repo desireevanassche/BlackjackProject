@@ -24,5 +24,9 @@ public class Dealer {
 		System.out.println("Dealer won this round. Better luck next time!");
 	}
 	
+	public void showHand() {
+		System.out.println("Dealer hand: ");
+		System.out.println(dealerHand.getCards() + " " + dealerHand.getHandValue() + "\n");
+	}
 
 }
