@@ -19,15 +19,17 @@ public class BlackJackApp {
 		BlackJackApp app = new BlackJackApp();
 
 		app.launch();
-		app.startGame();
 		app.userHitOrStay();
 	}
 
 	public void launch() {
+		BlackJackApp app = new BlackJackApp();
+
 		this.deck = new Deck();
 		this.player = new Player();
 		this.dealer = new Dealer();
 
+		boolean play = true;
 
 		System.out.println("Welceom****** EDIT ME ");
 		System.out.println("Are you ready to loose all your money? Yes or No ");
@@ -35,15 +37,17 @@ public class BlackJackApp {
 
 		if (input.equalsIgnoreCase("no")) {
 			System.out.println("Okay, goodbye!");
-		} else {
-			System.out.println("Let's get thid psy started");
+			play = false;
 
+		} else {
+			System.out.println("Let's get this party started");
+			startGame();
 		}
 	}
 
 	private void startGame() {
 
-// shuffle deck 
+		// shuffle deck
 		this.deck.shuffle(); // periods are important forget a period forget about callnf your method
 
 		// deal to player
@@ -60,22 +64,37 @@ public class BlackJackApp {
 	}
 
 	// new method to hit or stay
-	// must check if hand is bust 
-	//must check if hand is blackjack 
+	// must check if hand is bust
+	// must check if hand is blackjack
 
 	public void userHitOrStay() {
 
-		
-		System.out.println("Would you like to hit or stay?");
-		System.out.println("Type hit or stay: ");
-		String choice = userInput.nextLine();
+		while (!player.playerHand.isBlackJack() || !player.playerHand.isBust()) {
 
-		if (choice.equalsIgnoreCase("Hit")) {
-			this.player.playerHand.addCard(this.deck.dealCard());
-			this.player.showHand();
-		} else if (choice.equalsIgnoreCase("Stay")) {
-			System.out.println("You chose to stay.");
-			this.player.showHand();
-		} 
+			System.out.println("Would you like to hit or stay?");
+			System.out.println("Type hit or stay: ");
+			String choice = userInput.nextLine();
+
+			if (choice.equalsIgnoreCase("hit")) {
+				System.out.println("You chose hit, here is your new hand: ");
+				this.player.playerHand.addCard(this.deck.dealCard());
+				this.player.showHand();
+			}
+			if (choice.equalsIgnoreCase("stay")) {
+				System.out.println("You chose to stay, here is your hand: ");
+				this.player.showHand();
+				break;
+			}
+
+			if (player.playerHand.isBust()) {
+				System.out.println("BUST");
+				break;
+			}
+			if (player.playerHand.isBlackJack()) {
+				System.out.println("BLACKJACK");
+				break;
+			}
+
+		}
 	}
-	}
+}
