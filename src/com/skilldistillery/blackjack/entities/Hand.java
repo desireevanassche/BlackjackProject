@@ -3,6 +3,8 @@ package com.skilldistillery.blackjack.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.skilldistillery.cardgame.entitites.Card;
+
 public abstract class Hand {
 	protected List<Card> cardsInHand;
 
@@ -12,7 +14,7 @@ public abstract class Hand {
 
 	@Override
 	public String toString() {
-		return "Hand [hand=" + cardsInHand + "]";
+		return "Hand: " + cardsInHand;
 	}
 
 	public void addCard(Card card) {
@@ -22,9 +24,12 @@ public abstract class Hand {
 	public void discardHand() {
 		this.cardsInHand.clear();
 	}
+	
+	public List<Card> getCards() {
+		return cardsInHand;
+	}
 
 	public int getHandValue() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

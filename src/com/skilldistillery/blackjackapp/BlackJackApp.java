@@ -1,11 +1,11 @@
-package com.skildistillery.blackjackapp;
+package com.skilldistillery.blackjackapp;
 
 import java.util.Scanner;
 
 import com.skilldistillery.blackjack.entities.BlackJackHand;
 import com.skilldistillery.blackjack.entities.Dealer;
-import com.skilldistillery.blackjack.entities.Deck;
 import com.skilldistillery.blackjack.entities.Player;
+import com.skilldistillery.cardgame.entitites.Deck;
 
 public class BlackJackApp {
 	Scanner userInput = new Scanner(System.in);
@@ -23,25 +23,22 @@ public class BlackJackApp {
 	}
 
 	public void launch() {
-		BlackJackApp app = new BlackJackApp();
 
 		this.deck = new Deck();
 		this.player = new Player();
 		this.dealer = new Dealer();
 
-		boolean play = true;
 
 		System.out.println("Welceom****** EDIT ME ");
 		System.out.println("Are you ready to loose all your money? Yes or No ");
 		String input = userInput.nextLine();
 
-		if (input.equalsIgnoreCase("no")) {
-			System.out.println("Okay, goodbye!");
-			play = false;
-
-		} else {
+		if (input.equalsIgnoreCase("yes")) {
 			System.out.println("Let's get this party started");
 			startGame();
+
+		} else {
+			System.out.println("Okay, goodbye!");
 		}
 	}
 

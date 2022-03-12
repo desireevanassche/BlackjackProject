@@ -1,5 +1,7 @@
 package com.skilldistillery.blackjack.entities;
 
+import com.skilldistillery.cardgame.entitites.Card;
+
 public class BlackJackHand extends Hand {
 	
 	public boolean isBust() {
@@ -29,25 +31,5 @@ public class BlackJackHand extends Hand {
 	}
 }
 
-//		BlackJackApp bja = new BlackJackApp();
-//
-//		Deck playerHand = new Deck(); // player deck
-//		Deck dealerHand = new Deck();
-//
-//		playerHand.draw(bjDeck);
-//		playerHand.draw(bjDeck);
-//
-//		dealerHand.draw(bjDeck);
-//		dealerHand.draw(bjDeck);
-//
-//		System.out.println("Your cards are: ");
-//		System.out.println(playerHand.toString());
-//
-//		// BlackJackHand hand = new BlackJackHand();
-//		getHandValue(playerHand);
-//
-//		getDealerHandValue(dealerHand);
-//
-//	}
-//
+
 

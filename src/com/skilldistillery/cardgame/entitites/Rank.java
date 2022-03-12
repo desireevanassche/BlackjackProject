@@ -1,4 +1,4 @@
-package com.skilldistillery.blackjack.entities;
+package com.skilldistillery.cardgame.entitites;
 
 public enum Rank {
 	  TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), 
