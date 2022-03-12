@@ -3,8 +3,11 @@ package com.skilldistillery.blackjack.entities;
 public class BlackJackHand extends Hand {
 	
 	public boolean isBust() {
-		int sum = 0;
-		for (Card card :)
+		int sumOfCards = 0;
+		for (Card card : cardsInHand) {
+			sumOfCards += card.getValue();
+		}
+		return sumOfCards > 21;
 	}
 
 	public boolean isBlackJack() {
