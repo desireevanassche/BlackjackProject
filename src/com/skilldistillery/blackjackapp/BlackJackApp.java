@@ -20,6 +20,7 @@ public class BlackJackApp {
 
 		app.launch();
 		app.userHitOrStay();
+		app.displayWinner();
 	}
 
 	public void launch() {
@@ -28,6 +29,7 @@ public class BlackJackApp {
 		this.player = new Player();
 		this.dealer = new Dealer();
 
+		// add a line to watch dealer shuffle maybe menu? get started or watch shuffle
 
 		System.out.println("Welceom****** EDIT ME ");
 		System.out.println("Are you ready to loose all your money? Yes or No ");
@@ -84,14 +86,62 @@ public class BlackJackApp {
 			}
 
 			if (player.playerHand.isBust()) {
-				System.out.println("BUST");
+				System.out.println("Player Bust!");
 				break;
 			}
 			if (player.playerHand.isBlackJack()) {
-				System.out.println("BLACKJACK");
+				System.out.println("Player Blackjack!");
 				break;
 			}
 
 		}
+	}
+
+	public void dealerTurn() {
+
+		// User story 4: if dealer is below 17 they must hit
+		while (!dealer.dealerHand.isBust() && dealer.dealerHand.getHandValue() < 17) {
+			this.dealer.dealerHand.addCard(this.deck.dealCard());
+		}
+		if (dealer.dealerHand.isBlackJack()) {
+			System.out.println("Dealer has Blackajack!");
+		}
+	}
+
+	public void displayWinner() {
+		System.out.println("\ndrum roll, and the results are : \n");
+
+		this.player.showHand();
+		this.dealer.showHand();
+
+		if (player.playerHand.isBust()) {
+			dealer.dealerWin();
+
+		} else if (dealer.dealerHand.isBust()) {
+			player.playerWin();
+
+		} else if (player.playerHand.isBlackJack()) {
+			player.playerWin();
+
+		} else if (dealer.dealerHand.isBlackJack()) {
+			dealer.dealerWin();
+
+		} else if (dealer.dealerHand.getHandValue() < 21 && player.playerHand.getHandValue() < 21) {
+
+			if (player.playerHand.getHandValue() > dealer.dealerHand.getHandValue()) {
+				player.playerWin();
+			}
+			if (dealer.dealerHand.getHandValue() > player.playerHand.getHandValue()) {
+				dealer.dealerWin();
+
+			} else {
+				System.out.println("Push! No one is a loser today!");
+
+			}
+
+		}
+
+//return to menu 
+
 	}
 }
