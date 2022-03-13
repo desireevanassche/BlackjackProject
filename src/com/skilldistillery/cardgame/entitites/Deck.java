@@ -41,7 +41,7 @@ public class Deck {
 		int i = 0;
 		
 		for (Card card : this.cards) {
-			showCard += "\n" + i + card.toString();
+			showCard += "\n" + card.toString();
 			i ++; 
 		}
 		System.out.println(showCard);

@@ -3,7 +3,7 @@ package com.skilldistillery.blackjack.entities;
 import com.skilldistillery.cardgame.entitites.Card;
 
 public class BlackJackHand extends Hand {
-	
+
 	public boolean isBust() {
 		int sumOfCards = 0;
 		for (Card card : cardsInHand) {
@@ -29,9 +29,9 @@ public class BlackJackHand extends Hand {
 		return inHand;
 
 	}
-	
-	
+
+	public void discardHand() {
+		cardsInHand.clear();
+	}
+
 }
-
-
-
