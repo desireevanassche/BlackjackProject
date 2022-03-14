@@ -1,7 +1,7 @@
 # BlackjackProject
 
 
-##Description
+## Description
 This Object Oriented Java program is designed to play a fun game of Blackjack, also commonly known as Twenty-One. Who knew applying concepts of inheritance, polymorphism, and encapsulation could be so fun?
 
 This program has common elements that may be utilized in many different card applications, the most valuable being the Deck, which is made from an ArrayList of object Card. The Card object is created with Enumerators Suit and Rank as fields. Iterating through the Suit and Rank Enumerators values while building the Deck of cards allowed an efficient and constant Deck to be created.
@@ -9,7 +9,7 @@ This program has common elements that may be utilized in many different card app
 Once the deck is created the real fun begins. Two cards are dealt to both the Player and Dealer. These cards are then stored in their corresponding BlacjackHand which is a subclass of the abstract Superclass Hand. The player is shown their hand and given the options to either "Hit" or "Stay" with the goal of getting close to 21 total points without going over. The player may "Hit" as many times as they would like and are dealt a new card each time. The Dealer follows house logic, if their Hand is less than 17 they "Hit", and are dealt another card if they are over 17 they "Stay". If at any time either the Player or Dealer goes over 21(bust), or get Blackjack (21 on the first hand of cards) the game is over and the winner is announced.
 
 
-##Technologies Used
+## Technologies Used
 * Encapsulation
 * Object Oriented Programing
 * Inheritance
@@ -24,7 +24,7 @@ Once the deck is created the real fun begins. Two cards are dealt to both the Pl
 * Eclipse
 
 
-##Lessons Learned
+## Lessons Learned
 
 ### Git for Every Working Code
 While working on enhancing my project I made a mistake, one that caused my program to skip over the methods "isBust" or 'isBlackjack'. After a scan of the program, I was unable to find the error. Thankfully I had committed my program to Github. This saved what I would imagine being countless hours of backtracking, and allowed me to make a copy of the new code I wanted to implement while effortlessly copying my functioning code back to my application.
