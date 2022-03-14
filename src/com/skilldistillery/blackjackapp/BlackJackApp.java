@@ -63,6 +63,7 @@ public class BlackJackApp {
 
 		case 3:
 			deck.showDeckShuffle();
+			launchMenu();
 			break;
 
 		case 4:
@@ -82,10 +83,11 @@ public class BlackJackApp {
 
 		// deal to dealer
 		this.dealer.dealerHand.addCard(this.deck.dealCard());
+		this.dealer.showHand();
 		this.dealer.dealerHand.addCard(this.deck.dealCard());
 
-		// show player their hand
 		this.player.showHand();
+		// show player their hand
 
 		// if (!player.playerHand.isBust() && !player.playerHand.isBlackJack() &&
 		// !dealer.dealerHand.isBlackJack()) {
@@ -101,7 +103,7 @@ public class BlackJackApp {
 	public void userHitOrStay() {
 
 		while (!player.playerHand.isBust() && !player.playerHand.isBlackJack()) {
-
+ 
 			System.out.println("Would you like to hit or stay?");
 			System.out.println("Type hit or stay: ");
 
@@ -187,7 +189,6 @@ public class BlackJackApp {
 			playAgain = false;
 		}
 
-		userInput.nextLine();
 		player.playerHand.discardHand();
 		dealer.dealerHand.discardHand();
 	}
@@ -227,7 +228,7 @@ public class BlackJackApp {
 		System.out.println();
 
 		System.out.println("Back to main menu? Y/N");
-		String back = userInput.next();
+		String back = userInput.nextLine();
 
 		if (back.equalsIgnoreCase("Y")) {
 			launchMenu();
@@ -237,4 +238,5 @@ public class BlackJackApp {
 		}
 
 	}
+
 }

@@ -13,13 +13,13 @@ public class Dealer {
 		this.dealerHand = new BlackJackHand();
 		
 	}
-	
-	public void getHandValue(List<Card> inHand, int value) {
-		for (Card card : inHand) {
-			System.out.println(card);
-		} System.out.println("Total value of both cards: " + value);
-		
-	}
+//	
+//	public void getHandValue(List<Card> inHand, int value) {
+//		for (Card card : inHand) {
+//			System.out.println(card);
+//		} System.out.println("Total value of both cards: " + value);
+//		
+//	}
 	public void dealerWin() {
 		System.out.println("Dealer won this round. Better luck next time!");
 	}
